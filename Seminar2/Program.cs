@@ -97,3 +97,35 @@ else
 }
 */
 
+// ЗАДАЧА Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+
+ int CutNumber(int num)
+ {
+    int result;
+    if(num <= 999 && num >= 100)
+    {
+        int sot = num / 100;
+        int ed = num % 10;
+        result = sot * 10 + ed;
+    }
+    else
+    {
+        if(num >= 1000)
+        {
+            return -1;
+        }
+        else
+        {
+            if(num <= 99)
+            {
+                return -1;
+            }
+        }
+    }
+    return result;
+ }
+ 
+ Console.Write("Input three-digit num: ");
+ int num = Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine(CutNumber(num));
